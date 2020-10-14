@@ -22,6 +22,7 @@ export default class Dashboard extends Component {
   render() {
     this.state = { 
       displayName: firebase.auth().currentUser.displayName,
+      address:firebase.auth().currentUser.address,
       uid: firebase.auth().currentUser.uid
     }    
     return (
@@ -29,6 +30,12 @@ export default class Dashboard extends Component {
         <Text style = {styles.textStyle}>
           Hello, {this.state.displayName}
         </Text>
+
+        <Text style = {styles.textStyle}>
+          address, {this.state.address}
+        </Text>
+
+        
 
         <Button
           color="#3740FE"

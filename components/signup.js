@@ -11,6 +11,8 @@ export default class Signup extends Component {
     super();
     this.state = { 
       displayName: '',
+      phoneno: '',
+      address:'',
       email: '', 
       password: '',
       isLoading: false
@@ -41,6 +43,8 @@ export default class Signup extends Component {
         this.setState({
           isLoading: false,
           displayName: '',
+          phoneno: '',
+          address:'',
           email: '', 
           password: ''
         })
@@ -65,7 +69,19 @@ export default class Signup extends Component {
           placeholder="Name"
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
-        />      
+        />    
+         <TextInput
+          style={styles.inputStyle}
+          placeholder="Address"
+          value={this.state.address}
+          onChangeText={(val) => this.updateInputVal(val, 'address')}
+        />   
+         <TextInput
+          style={styles.inputStyle}
+          placeholder="Phone Number"
+          value={this.state.phoneno}
+          onChangeText={(val) => this.updateInputVal(val, 'phoneno')}
+        />
         <TextInput
           style={styles.inputStyle}
           placeholder="Email"
